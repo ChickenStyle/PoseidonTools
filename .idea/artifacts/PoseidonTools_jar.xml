@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PoseidonTools:jar">
+    <output-path>$PROJECT_DIR$/../../../../Test Servers/Spigot 1.8/plugins</output-path>
+    <root id="archive" name="PoseidonTools.jar">
+      <element id="module-output" name="PoseidonTools" />
+    </root>
+  </artifact>
+</component>

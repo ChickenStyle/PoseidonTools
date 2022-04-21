@@ -1,0 +1,55 @@
+tokenData:
+  mobDrop:
+    - "SILVER_FISH:5"
+progressBar:
+  bar: "----------"
+  filledColor: "&a"
+  unfilledColor: "&7"
+
+toolsData:
+  MOBSWORD:
+    itemName: "&7MobSword"
+    description:
+      - "&7Cool Description"
+    maxLevel: 100
+    enchantmentMaxLevel: 100
+    xpSource:
+      - "ZOMBIE:5"
+      - "SKELETON:10"
+      - "SILVERFISH:20"
+    enchantments:
+
+  POSEIDONS_AXE:
+    itemName: "&bPoseidon's Axe"
+    description:
+      - "&7Insane Poseidon Axe :)"
+    maxLevel: 100
+    enchantMaxLevel: 100
+    xpSource:
+      - "LOG,0:5"
+      - "LOG,1:10"
+
+  ATLANTIS_PICKAXE:
+    itemName: "&bAtlantis Pickaxe"
+    description:
+      - "&7Cool Atlantis Pickaxe"
+    maxLevel: 100
+    enchantMaxLevel: 100
+    xpSource:
+      - "STONE:1"
+      - "COAL_ORE:5"
+      - "IRON_ORE:10"
+
+itemsFormat:
+  tokenFormat:
+    material: NETHER_STAR
+    displayName: "&6Upgrade Token"
+    lore:
+      - "&7Use this token to upgrade your &bPoseidonTools!"
+  toolFormat:
+    displayName: "%item-name%"
+    lore:
+      - "%item-description%"
+      - " "
+      - "&7Level (&e%item-level%&7/&6%item-max-level%&7):"
+      - "%progress-bar% &7(&e%item-xp%&7/&6%item-xp-needed%&7)"

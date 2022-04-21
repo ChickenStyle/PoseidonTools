@@ -1,0 +1,110 @@
+upgradeInventory:
+  title: "&7Upgrade Menu"
+  buttons:
+    enchantmentsButton:
+      material: BOOKSHELF
+      displayName: "&7Tool's Enchantments"
+      lore:
+        - "&7Click here to upgrade tool's enchantments"
+    abilitesButton:
+      material: ENDER_PORTAL_FRAME
+      displayName: "&7Tool's Abilities"
+      lore:
+        - "&7Click here to upgrade tool's abilities"
+
+enchantmentUpgrade:
+  title: "&7Enchantment Upgrade"
+  canAfford: "&aClick here to upgrade this enchantment!"
+  cannotAfford: "&4You don't have enough tokens to upgrade this enchantment!"
+  buttons:
+    nextEnchantment:
+      material: ARROW
+      displayName: "&7Next Enchantment"
+      lore:
+        - "&7Click here to see next enchantment!"
+    previousEnchantment:
+      material: ARROW
+      displayName: "&7Previous Enchantment"
+      lore:
+        - "&7Click here to see previous enchantment!"
+  enchantments:
+    Token_Booster:
+        material: NETHER_STAR
+        displayName: "&7Token Booster"
+        lore:
+          - "&7Enter Description Here!"
+          - "&4%current-level%&7/&6%max-level%"
+          - "&7Upgrade Price: &6%upgrade-price%"
+          - "%can-afford%"
+    Drop_Booster:
+        material: HOPPER
+        displayName: "&7Drop Booster"
+        lore:
+          - "&7Enter Description Here!"
+          - "&4%current-level%&7/&6%max-level%"
+          - "&7Upgrade Price: &6%upgrade-price%"
+          - "%can-afford%"
+    Key_Finder:
+      material: TRIPWIRE_HOOK
+      displayName: "&7Key Finder"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    Spawner_Finder:
+      material: MOB_SPAWNER
+      displayName: "&7Spawner Finder"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    XP_Finder:
+      material: EXP_BOTTLE
+      displayName: "&7XP Finder"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    Immunity:
+      material: IRON_CHESTPLATE
+      displayName: "&7Immunity"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    Multi_Kill:
+      material: IRON_SWORD
+      displayName: "&7Multi Kill"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    Speed:
+      material: SUGAR
+      displayName: "&7Speed"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    Haste:
+      material: GOLD_PICKAXE
+      displayName: "&7Haste"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
+    Efficiency:
+      material: FEATHER
+      displayName: "&7Efficiency"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
