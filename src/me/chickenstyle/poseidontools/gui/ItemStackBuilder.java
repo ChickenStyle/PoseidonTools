@@ -25,6 +25,14 @@ public class ItemStackBuilder {
         ItemStack item = new ItemStack(Material.valueOf(
                 config.getString(path + ".material")
         ));
+
+        if (config.contains(path + ".damage")) {
+            item = new ItemStack(Material.valueOf(
+                    config.getString(path + ".material")
+            ), 1, ((Integer)config.get(path + ".damage")).shortValue());
+        }
+
+
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(Utils.replacePlaceHolders(config.getString(path + ".displayName"), placeHolders));
         meta.setLore(

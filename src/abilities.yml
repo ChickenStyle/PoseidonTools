@@ -1,0 +1,36 @@
+MOBSWORD:
+  Gateway_to_Hell:
+    maxLevel: 50
+    chance: 2
+    increaseChancePerLevel: 0.1
+  Rage_Berry:
+    maxLevel: 50
+    chance: 2
+    increaseChancePerLevel: 0.1
+
+POSEIDONS_AXE:
+  Explosive_Foraging:
+    maxLevel: 50
+    chance: 5
+    breakLeaves: true
+    startingBreakBlocksAmount: 10
+    increaseBreakBlockAmount: 2
+  Spirit_of_the_Woods:
+    maxLevel: 50
+    chance: 2
+    increaseChancePerLevel: 0.1
+
+ATLANTIS_PICKAXE:
+  BlackHole:
+    maxLevel: 50
+    chance: 2
+    radius: 5
+    pullPlayers: true
+    pullPlayersRadius: 5
+    damagePlayersOnExplosion: false
+    damagePower: 5 #Hearts
+
+  Spicy_Taco:
+    maxLevel: 50
+    chance: 2
+    increaseChancePerLevel: 0.1

@@ -1,6 +1,11 @@
 tokenData:
   mobDrop:
-    - SILVER_FISH:5
+    - "SILVERFISH:5:3"
+  logDrop:
+    - "LOG,0:5:3"
+  blockDrop:
+    - "STONE,1:5:3"
+    # "Token_Source:Chance:Range (from 1 to the number you put)"
 progressBar:
   bar: '----------'
   filledColor: '&a'
@@ -11,87 +16,30 @@ toolsData:
     description:
       - '&7Cool Description'
     maxLevel: 100
-    enchantmentMaxLevel: 100
     xpSource:
-      - ZOMBIE:5
-      - SKELETON:10
-      - SILVERFISH:20
-    enchantments:
-      Token_Booster:
-        upgradePrice: 5
-        startingChance: 5
-      Drop_Booster:
-        upgradePrice: 5
-        startingChance: 5
-      Key_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      Spawner_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      XP_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      Immunity:
-        upgradePrice: 5
-        startingChance: 5
-      Multi_Kill:
-        upgradePrice: 5
-        startingChance: 5
+      - "ZOMBIE:5"
+      - "SKELETON:10"
+      - "SILVERFISH:20"
+
   POSEIDONS_AXE:
     itemName: '&bPoseidon''s Axe'
     description:
       - '&7Insane Poseidon Axe :)'
     maxLevel: 100
-    enchantMaxLevel: 100
     xpSource:
-      - LOG,0:5
-      - LOG,1:10
-    enchantments:
-      Efficiency:
-        upgradePrice: 5
-        startingChance: 5
-      Token_Booster:
-        upgradePrice: 5
-        startingChance: 5
-      Drop_Booster:
-        upgradePrice: 5
-        startingChance: 5
-      Key_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      Spawner_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      Speed:
-        upgradePrice: 5
-        startingChance: 5
+      - "LOG,0:5"
+      - "LOG,1:10"
+
   ATLANTIS_PICKAXE:
     itemName: '&bAtlantis Pickaxe'
     description:
       - '&7Cool Atlantis Pickaxe'
     maxLevel: 100
-    enchantMaxLevel: 100
     xpSource:
-      - STONE:1
-      - COAL_ORE:5
-      - IRON_ORE:10
-    enchantments:
-      Token_Booster:
-        upgradePrice: 5
-        startingChance: 5
-      Drop_Booster:
-        upgradePrice: 5
-        startingChance: 5
-      Key_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      Spawner_Finder:
-        upgradePrice: 5
-        startingChance: 5
-      Haste:
-        upgradePrice: 5
-        startingChance: 5
+      - "STONE:1"
+      - "COAL_ORE:5"
+      - "IRON_ORE:10"
+
 itemsFormat:
   tokenFormat:
     material: NETHER_STAR

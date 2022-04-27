@@ -2,3 +2,5 @@ messages:
   LEVEL_UP_MESSAGE: "&6%item-name%'s &7level has been increased to &a%item-level%&7!"
   ENCHANTMENT_UPGRADE: "&7You upgraded &a%enchantment% &7to level &6%enchantment-level%&7!"
   FAILED_ENCHANTMENT_UPGRADE: "&4You don't have enough tokens to upgrade %enchantment%!"
+  FAILED_ABILITY_UPGRADE: "&4You don't have enough level points to upgrade %ability%!"
+  ACTIVATED_ENCHANTMENT: "&7Enchantment &6%enchantment% &7has been activated!"

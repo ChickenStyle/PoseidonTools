@@ -12,10 +12,79 @@ upgradeInventory:
       lore:
         - "&7Click here to upgrade tool's abilities"
 
+abilityUpgrade:
+  title: "&7Ability Upgrade"
+  canAffordAbility: "&aClick here to upgrade this ability!"
+  cannotAffordAbility: "&4You don't have enough level points to upgrade this enchantment!"
+  buttons:
+    backButton:
+      material: BARRIER
+      displayName: "&7Back"
+      lore:
+        - "&7Click here to go to back."
+  abilities:
+    Gateway_to_Hell:
+      material: NETHERRACK
+      displayName: "&4Gateway to Hell"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price% &7level points"
+        - "&7You have: &6%level-points%&7 level points!"
+        - "%can-afford%"
+    Rage_Berry:
+      material: SPIDER_EYE
+      damage: 0
+      displayName: "&4Rage Berry"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price% &7level points"
+        - "&7You have: &6%level-points%&7 level points!"
+        - "%can-afford%"
+    Explosive_Foraging:
+      material: TNT
+      displayName: "&cExplosive Foraging"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price% &7level points"
+        - "&7You have: &6%level-points%&7 level points!"
+        - "%can-afford%"
+    Spirit_of_the_Woods:
+      material: INK_SACK
+      damage: 2
+      displayName: "&aSpirit Of The Woods"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price% &7level points"
+        - "&7You have: &6%level-points%&7 level points!"
+        - "%can-afford%"
+    BlackHole:
+      material: ENDER_PEARL
+      displayName: "&5BlackHole"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price% &7level points"
+        - "&7You have: &6%level-points%&7 level points!"
+        - "%can-afford%"
+    Spicy_Taco:
+      material: RAW_BEEF
+      displayName: "&cSpicy Taco"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price% &7 level points"
+        - "&7You have: &6%level-points%&7 level points!"
+        - "%can-afford%"
+
+
 enchantmentUpgrade:
   title: "&7Enchantment Upgrade"
-  canAfford: "&aClick here to upgrade this enchantment!"
-  cannotAfford: "&4You don't have enough tokens to upgrade this enchantment!"
+  canAffordEnchantment: "&aClick here to upgrade this enchantment!"
+  cannotAffordEnchantment: "&4You don't have enough tokens to upgrade this enchantment!"
   buttons:
     nextEnchantment:
       material: ARROW
@@ -27,23 +96,28 @@ enchantmentUpgrade:
       displayName: "&7Previous Enchantment"
       lore:
         - "&7Click here to see previous enchantment!"
+    backButton:
+      material: BARRIER
+      displayName: "&7Back"
+      lore:
+        - "&7Click here to go to back."
   enchantments:
     Token_Booster:
-        material: NETHER_STAR
-        displayName: "&7Token Booster"
-        lore:
-          - "&7Enter Description Here!"
-          - "&4%current-level%&7/&6%max-level%"
-          - "&7Upgrade Price: &6%upgrade-price%"
-          - "%can-afford%"
+      material: NETHER_STAR
+      displayName: "&7Token Booster"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
     Drop_Booster:
-        material: HOPPER
-        displayName: "&7Drop Booster"
-        lore:
-          - "&7Enter Description Here!"
-          - "&4%current-level%&7/&6%max-level%"
-          - "&7Upgrade Price: &6%upgrade-price%"
-          - "%can-afford%"
+      material: HOPPER
+      displayName: "&7Drop Booster"
+      lore:
+        - "&7Enter Description Here!"
+        - "&4%current-level%&7/&6%max-level%"
+        - "&7Upgrade Price: &6%upgrade-price%"
+        - "%can-afford%"
     Key_Finder:
       material: TRIPWIRE_HOOK
       displayName: "&7Key Finder"
@@ -71,14 +145,6 @@ enchantmentUpgrade:
     Immunity:
       material: IRON_CHESTPLATE
       displayName: "&7Immunity"
-      lore:
-        - "&7Enter Description Here!"
-        - "&4%current-level%&7/&6%max-level%"
-        - "&7Upgrade Price: &6%upgrade-price%"
-        - "%can-afford%"
-    Multi_Kill:
-      material: IRON_SWORD
-      displayName: "&7Multi Kill"
       lore:
         - "&7Enter Description Here!"
         - "&4%current-level%&7/&6%max-level%"

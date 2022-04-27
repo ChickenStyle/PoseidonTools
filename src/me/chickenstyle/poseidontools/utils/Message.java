@@ -5,8 +5,9 @@ import me.chickenstyle.poseidontools.PoseidonTools;
 public enum Message {
     LEVEL_UP_MESSAGE,
     ENCHANTMENT_UPGRADE,
-    FAILED_ENCHANTMENT_UPGRADE;
-
+    FAILED_ENCHANTMENT_UPGRADE,
+    ACTIVATED_ENCHANTMENT,
+    FAILED_ABILITY_UPGRADE;
 
     private String text;
 

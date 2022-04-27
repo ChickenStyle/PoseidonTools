@@ -1,0 +1,84 @@
+MOBSWORD:
+  Token_Booster:
+    upgradePrice: 5
+    dropRangeIncreasePerLevel: 0.5
+    startingChance: 5
+    maxLevel: 100
+  Drop_Booster:
+    upgradePrice: 5
+    dropRangeIncreasePerLevel: 0.4
+    startingChance: 5
+    maxLevel: 100
+  Key_Finder:
+    upgradePrice: 5
+    chanceIncreasePerLevel: 0.2
+    command: "say enter key finder enchantment command!"
+    startingChance: 5
+    maxLevel: 100
+  Spawner_Finder:
+    upgradePrice: 5
+    chanceIncreasePerLevel: 0.2
+    command: "say enter key finder enchantment command!"
+    startingChance: 5
+    maxLevel: 100
+  XP_Finder:
+    upgradePrice: 5
+    chanceIncreasePerLevel: 0.5
+    startingChance: 5
+    minXPIncrease: 500
+    maxXPIncrease: 10000
+    maxLevel: 100
+  Immunity:
+    upgradePrice: 5
+    chanceIncreasePerLevel: 0.5
+    immunityTime: 30
+    startingChance: 5
+    maxLevel: 100
+
+POSEIDONS_AXE:
+  Efficiency:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Token_Booster:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Drop_Booster:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Key_Finder:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Spawner_Finder:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Speed:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+
+ATLANTIS_PICKAXE:
+  Token_Booster:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Drop_Booster:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Key_Finder:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Spawner_Finder:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100
+  Haste:
+    upgradePrice: 5
+    startingChance: 5
+    maxLevel: 100

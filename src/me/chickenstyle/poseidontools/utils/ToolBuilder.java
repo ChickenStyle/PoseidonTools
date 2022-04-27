@@ -3,7 +3,6 @@ package me.chickenstyle.poseidontools.utils;
 import me.chickenstyle.poseidontools.PoseidonTools;
 import me.chickenstyle.poseidontools.ToolType;
 import me.chickenstyle.poseidontools.nms.NMSHandler;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 public class ToolBuilder {
 
     public static PoseidonTool generateDefaultTool(ToolType toolType) {
-        return new PoseidonTool(toolType,1,0);
+        return new PoseidonTool(toolType);
     }
 
     public static PoseidonTool fromItemStack(ItemStack item) {
@@ -26,6 +25,8 @@ public class ToolBuilder {
         ToolType type = ToolType.valueOf(nms.getStringData(item, "PoseidonTool"));
         int currentLevel = nms.getIntData(item, "CurrentLevel");
         int currentXP = nms.getIntData(item, "CurrentXP");
+        int levelTokens = nms.getIntData(item, "LevelTokens");
+
 
         Map<String,Integer> enchantments = new HashMap<>();
 
@@ -33,7 +34,13 @@ public class ToolBuilder {
             enchantments.put(enchantment, nms.getIntData(item, enchantment));
         }
 
-        return new PoseidonTool(type, currentLevel, currentXP, enchantments);
+        Map<String,Integer> abilities = new HashMap<>();
+
+        for (String ability : type.getAbilities()) {
+            abilities.put(ability, nms.getIntData(item, ability));
+        }
+
+        return new PoseidonTool(type, currentLevel, currentXP, levelTokens, enchantments, abilities);
     }
 
     public static ItemStack toItemStack(PoseidonTool tool) {
@@ -105,9 +112,15 @@ public class ToolBuilder {
         item = nms.addStringTag(item, "PoseidonTool", tool.getToolType().toString());
         item = nms.addIntTag(item, "CurrentLevel", tool.getCurrentLevel());
         item = nms.addIntTag(item, "CurrentXP", tool.getCurrentXP());
+        item = nms.addIntTag(item, "LevelTokens", tool.getLevelPoints());
 
         for (String enchantment : tool.getToolType().getEnchantments()) {
-            item = nms.addIntTag(item, enchantment, tool.getEnchantmentsLevel().get(enchantment));
+            item = nms.addIntTag(item, enchantment, tool.getEnchantmentLevel(enchantment));
+        }
+
+        for (String ability : tool.getToolType().getAbilities()) {
+            System.out.println(tool.getAbilityLevel(ability));
+            item = nms.addIntTag(item, ability, tool.getAbilityLevel(ability));
         }
 
         return nms.addGlow(item);

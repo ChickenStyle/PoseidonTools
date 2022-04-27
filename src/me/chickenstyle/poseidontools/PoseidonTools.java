@@ -2,6 +2,7 @@ package me.chickenstyle.poseidontools;
 
 import com.mysql.jdbc.log.Log;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
+import me.chickenstyle.poseidontools.events.EnchantmentEvents;
 import me.chickenstyle.poseidontools.events.ToolXPEvents;
 import me.chickenstyle.poseidontools.gui.MenuHandler;
 import me.chickenstyle.poseidontools.nms.NMSHandler;
@@ -10,6 +11,7 @@ import me.chickenstyle.poseidontools.utils.Message;
 import me.chickenstyle.poseidontools.ymls.Config;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +20,8 @@ public class PoseidonTools extends JavaPlugin {
     private NMSHandler nmsHandler;
     private Config msgConfig;
     private Config menuConfig;
+    private Config enchantConfig;
+    private Config abilitiesConfig;
     private MenuHandler menuHandler;
     private Economy eco;
     private WorldGuardPlugin worldGuard;
@@ -41,6 +45,8 @@ public class PoseidonTools extends JavaPlugin {
         saveDefaultConfig();
         msgConfig = new Config("messages.yml");
         menuConfig = new Config("gui.yml");
+        enchantConfig = new Config("enchantments.yml");
+        abilitiesConfig = new Config("abilities.yml");
 
         Message.loadMessages();
         Logger.log("&aPlugin has been loaded!");
@@ -49,6 +55,7 @@ public class PoseidonTools extends JavaPlugin {
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new ToolXPEvents(), this);
         getServer().getPluginManager().registerEvents(menuHandler.getListeners(), this);
+        getServer().getPluginManager().registerEvents(new EnchantmentEvents(), this);
     }
 
     private boolean detectNMSVersion() {
@@ -91,6 +98,14 @@ public class PoseidonTools extends JavaPlugin {
 
     public Config getMenuConfig() {
         return menuConfig;
+    }
+
+    public Config getEnchantConfig() {
+        return enchantConfig;
+    }
+
+    public Config getAbilitiesConfig() {
+        return abilitiesConfig;
     }
 
     private void loadHooks() {

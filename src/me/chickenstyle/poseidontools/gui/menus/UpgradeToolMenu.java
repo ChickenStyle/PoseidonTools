@@ -7,7 +7,6 @@ import me.chickenstyle.poseidontools.gui.Menu;
 import me.chickenstyle.poseidontools.utils.PoseidonTool;
 import me.chickenstyle.poseidontools.utils.Utils;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
@@ -50,7 +49,10 @@ public class UpgradeToolMenu extends Menu {
                                         .buildItemStack("upgradeInventory.buttons.abilitesButton"))) {
                     @Override
                     public void onClick(Menu menu, InventoryClickEvent event) {
-                        System.out.println("Button 2");
+                        PoseidonTools.getInstance().getMenuHandler().closeMenu((Player) event.getWhoClicked());
+
+                        PoseidonTools.getInstance().getMenuHandler().openMenu((Player) event.getWhoClicked(),
+                                new AbilityUpgradeMenu(tool, (Player) event.getWhoClicked()));
                     }
                 }
         );
