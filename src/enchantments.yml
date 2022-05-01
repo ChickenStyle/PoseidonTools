@@ -39,46 +39,66 @@ POSEIDONS_AXE:
   Efficiency:
     upgradePrice: 5
     startingChance: 5
+    effectPower: 3
+    duration: 20
+    chanceIncreasePerLevel: 0.1
     maxLevel: 100
   Token_Booster:
     upgradePrice: 5
+    dropRangeIncreasePerLevel: 0.5
     startingChance: 5
     maxLevel: 100
   Drop_Booster:
     upgradePrice: 5
+    logAmountIncreasePerLevel: 1
     startingChance: 5
     maxLevel: 100
   Key_Finder:
     upgradePrice: 5
-    startingChance: 5
+    chanceIncreasePerLevel: 0.1
+    command: "say enter key finder enchantment command!"
+    startingChance: 2
     maxLevel: 100
   Spawner_Finder:
     upgradePrice: 5
-    startingChance: 5
+    chanceIncreasePerLevel: 0.1
+    command: "say enter key finder enchantment command!"
+    startingChance: 2
     maxLevel: 100
   Speed:
     upgradePrice: 5
     startingChance: 5
+    effectPower: 2
+    duration: 30
+    chanceIncreasePerLevel: 0.1
     maxLevel: 100
 
 ATLANTIS_PICKAXE:
   Token_Booster:
     upgradePrice: 5
+    dropRangeIncreasePerLevel: 0.5
     startingChance: 5
     maxLevel: 100
   Drop_Booster:
     upgradePrice: 5
+    logAmountIncreasePerLevel: 1
     startingChance: 5
     maxLevel: 100
   Key_Finder:
     upgradePrice: 5
-    startingChance: 5
+    chanceIncreasePerLevel: 0.1
+    command: "say enter key finder enchantment command!"
+    startingChance: 2
     maxLevel: 100
   Spawner_Finder:
     upgradePrice: 5
-    startingChance: 5
+    chanceIncreasePerLevel: 0.1
+    command: "say enter key finder enchantment command!"
+    startingChance: 2
     maxLevel: 100
   Haste:
     upgradePrice: 5
     startingChance: 5
+    effectPower: 3
+    duration: 20
     maxLevel: 100

@@ -1,17 +1,15 @@
 package me.chickenstyle.poseidontools;
 
-import com.mysql.jdbc.log.Log;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-import me.chickenstyle.poseidontools.events.EnchantmentEvents;
-import me.chickenstyle.poseidontools.events.ToolXPEvents;
+import me.chickenstyle.poseidontools.events.*;
 import me.chickenstyle.poseidontools.gui.MenuHandler;
 import me.chickenstyle.poseidontools.nms.NMSHandler;
+import me.chickenstyle.poseidontools.utils.DamageManager;
 import me.chickenstyle.poseidontools.utils.Logger;
 import me.chickenstyle.poseidontools.utils.Message;
 import me.chickenstyle.poseidontools.ymls.Config;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,6 +20,7 @@ public class PoseidonTools extends JavaPlugin {
     private Config menuConfig;
     private Config enchantConfig;
     private Config abilitiesConfig;
+    private DamageManager damageManager;
     private MenuHandler menuHandler;
     private Economy eco;
     private WorldGuardPlugin worldGuard;
@@ -38,6 +37,7 @@ public class PoseidonTools extends JavaPlugin {
 
         instance = this;
         menuHandler = new MenuHandler();
+        damageManager = new DamageManager();
         registerEvents();
         setupEconomy();
         loadHooks();
@@ -55,7 +55,12 @@ public class PoseidonTools extends JavaPlugin {
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new ToolXPEvents(), this);
         getServer().getPluginManager().registerEvents(menuHandler.getListeners(), this);
-        getServer().getPluginManager().registerEvents(new EnchantmentEvents(), this);
+        getServer().getPluginManager().registerEvents(new SwordEnchantEvents(), this);
+        getServer().getPluginManager().registerEvents(new AxeEnchantEvents(), this);
+        getServer().getPluginManager().registerEvents(new PickaxeEnchantEvents(), this);
+        getServer().getPluginManager().registerEvents(damageManager, this);
+        getServer().getPluginManager().registerEvents(new AbilityEvents(), this);
+        getServer().getPluginManager().registerEvents(new ConsumableEvents(), this);
     }
 
     private boolean detectNMSVersion() {
@@ -140,4 +145,7 @@ public class PoseidonTools extends JavaPlugin {
         return worldGuard;
     }
 
+    public DamageManager getDamageManager() {
+        return damageManager;
+    }
 }

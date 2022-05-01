@@ -119,7 +119,6 @@ public class ToolBuilder {
         }
 
         for (String ability : tool.getToolType().getAbilities()) {
-            System.out.println(tool.getAbilityLevel(ability));
             item = nms.addIntTag(item, ability, tool.getAbilityLevel(ability));
         }
 

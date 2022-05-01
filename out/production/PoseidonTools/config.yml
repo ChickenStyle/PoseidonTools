@@ -4,7 +4,7 @@ tokenData:
   logDrop:
     - "LOG,0:5:3"
   blockDrop:
-    - "STONE,1:5:3"
+    - "STONE,0:5:3"
     # "Token_Source:Chance:Range (from 1 to the number you put)"
 progressBar:
   bar: '----------'
@@ -53,3 +53,19 @@ itemsFormat:
       - ' '
       - '&7Level (&e%item-level%&7/&6%item-max-level%&7):'
       - '%progress-bar% &7(&e%item-xp%&7/&6%item-xp-needed%&7)'
+  rageBerry:
+    material: SPIDER_EYE
+    displayName: "&cRage Berry"
+    lore:
+      - "&7Enter lore here :)"
+  spiritOfTheWoods:
+    material: POTION
+    damage: 8201
+    displayName: "&aSpirit Of The Woods"
+    lore:
+      - "&7Enter lore here :)"
+  spicyTaco:
+    material: RAW_BEEF
+    displayName: "&cSpicy Taco"
+    lore:
+      - "&7Enter lore here 0-0"

@@ -7,7 +7,6 @@ import me.chickenstyle.poseidontools.utils.Message;
 import me.chickenstyle.poseidontools.utils.PlaceHolder;
 import me.chickenstyle.poseidontools.utils.PoseidonTool;
 import me.chickenstyle.poseidontools.utils.ToolBuilder;
-import me.chickenstyle.poseidontools.ymls.Config;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -20,14 +19,11 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
 
-public class EnchantmentEvents implements Listener {
+public class SwordEnchantEvents implements Listener {
 
-    public EnchantmentEvents() {
+    public SwordEnchantEvents() {
         loadTokenDropChances();
     }
 
@@ -50,7 +46,7 @@ public class EnchantmentEvents implements Listener {
         FileConfiguration enchantConfig = PoseidonTools.getInstance().getEnchantConfig().getConfig();
 
         if (tool.hasEnchantment("Token_Booster") && canDropTokens &&
-                rnd.nextDouble() < (enchantConfig.getInt("MOBSWORD.Token_Booster.startingChance")/100.0)) {
+                rnd.nextDouble() < (enchantConfig.getDouble("MOBSWORD.Token_Booster.startingChance")/100.0)) {
             double dropRangeIncreasePerLevel = enchantConfig
                     .getDouble("MOBSWORD.Token_Booster.dropRangeIncreasePerLevel");
             tokenDropAmount += tokenDropData.get(entity.getType()).generateDropAmount(
@@ -61,7 +57,7 @@ public class EnchantmentEvents implements Listener {
         }
 
         if (tool.hasEnchantment("Drop_Booster") &&
-                rnd.nextDouble() < (enchantConfig.getInt("MOBSWORD.Drop_Booster.startingChance")/100.0)) {
+                rnd.nextDouble() < (enchantConfig.getDouble("MOBSWORD.Drop_Booster.startingChance")/100.0)) {
             double rangeIncrease = enchantConfig.getDouble("MOBSWORD.Drop_Booster.dropRangeIncreasePerLevel");
             int amountIncrease = (int) (rangeIncrease * tool.getEnchantmentLevel("Drop_Booster"));
 
@@ -128,13 +124,10 @@ public class EnchantmentEvents implements Listener {
             token.setAmount(tokenDropAmount);
             e.getDrops().add(token);
         }
-
-
-
     }
 
 
-    public static void loadTokenDropChances() {
+    private void loadTokenDropChances() {
         tokenDropData = new HashMap<>();
         for (String data : PoseidonTools.getInstance().getConfig().getStringList("tokenData.mobDrop")) {
             tokenDropData.put(EntityType.valueOf(data.split(":")[0]),
@@ -142,26 +135,4 @@ public class EnchantmentEvents implements Listener {
         }
     }
 
-    private static class TokenDrop {
-
-        private int chance;
-        private int dropRange;
-
-        public TokenDrop(int chance, int dropRange) {
-            this.chance = chance;
-            this.dropRange = dropRange;
-        }
-
-        public int generateDropAmount() {
-            return generateDropAmount(0);
-        }
-
-        public int generateDropAmount(int rangeIncrease) {
-            return ThreadLocalRandom.current().nextInt(1, dropRange + rangeIncrease + 1);
-        }
-
-        public int getChance() {
-            return chance;
-        }
-    }
 }

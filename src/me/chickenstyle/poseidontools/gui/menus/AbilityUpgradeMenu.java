@@ -6,6 +6,7 @@ import me.chickenstyle.poseidontools.gui.ItemStackBuilder;
 import me.chickenstyle.poseidontools.gui.Menu;
 import me.chickenstyle.poseidontools.utils.*;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
@@ -27,12 +28,6 @@ public class AbilityUpgradeMenu extends Menu {
 
 
     private void loadAbilityButtons(){
-
-        System.out.println(tool.getToolType().getAbilities()[0] + ":" +
-                tool.getAbilityLevel(tool.getToolType().getAbilities()[0]));
-
-        System.out.println(tool.getToolType().getAbilities()[1] + ":" +
-                tool.getAbilityLevel(tool.getToolType().getAbilities()[1]));
 
         String canAfford = PoseidonTools.getInstance().getMenuConfig()
                 .getString("abilityUpgrade.canAffordAbility");
@@ -66,12 +61,20 @@ public class AbilityUpgradeMenu extends Menu {
                     tool.setAbilityLevel(ability, tool.getAbilityLevel(ability) + 1);
                     player.setItemInHand(ToolBuilder.toItemStack(tool));
                     player.updateInventory();
+                    player.sendMessage(Message.ABILITY_UPGRADE.toMSG(
+                            new PlaceHolder("ability",
+                                    ability.replace("_", " ")),
+                            new PlaceHolder("ability-level",
+                                    tool.getAbilityLevel(ability) + "")
+                    ));
+                    player.playSound(player.getLocation(), Sound.LEVEL_UP, 0.5f, 0.1f);
                     loadAbilityButtons();
                 } else {
                     if (tool.getLevelPoints() <= 0 && upgradePrice != 0)
                         player.sendMessage(Message.FAILED_ABILITY_UPGRADE.toMSG(
                                 new PlaceHolder("ability", ability.replaceAll("_", " "))
                         ));
+                        player.playSound(player.getLocation(), Sound.BLAZE_HIT, 1.0f, 0.1f);
                 }
             }
         });
@@ -101,6 +104,13 @@ public class AbilityUpgradeMenu extends Menu {
                     tool.setAbilityLevel(ability, tool.getAbilityLevel(ability) + 1);
                     player.setItemInHand(ToolBuilder.toItemStack(tool));
                     player.updateInventory();
+                    player.playSound(player.getLocation(), Sound.LEVEL_UP, 0.5f, 0.1f);
+                    player.sendMessage(Message.ABILITY_UPGRADE.toMSG(
+                            new PlaceHolder("ability",
+                                    ability.replace("_", " ")),
+                            new PlaceHolder("ability-level",
+                                    tool.getAbilityLevel(ability) + "")
+                    ));
                     loadAbilityButtons();
 
                 } else {
@@ -108,6 +118,7 @@ public class AbilityUpgradeMenu extends Menu {
                         player.sendMessage(Message.FAILED_ABILITY_UPGRADE.toMSG(
                                 new PlaceHolder("ability", ability.replaceAll("_", " "))
                         ));
+                        player.playSound(player.getLocation(), Sound.BLAZE_HIT, 1.0f, 0.1f);
                 }
             }
         });

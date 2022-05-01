@@ -2,11 +2,12 @@ MOBSWORD:
   Gateway_to_Hell:
     maxLevel: 50
     chance: 2
-    increaseChancePerLevel: 0.1
+    chanceIncreasePerLevel: 0.1
+    commandToRun: say enter command for mobsword gateway to hell ability! #You can use %player% as a place holder :P
   Rage_Berry:
     maxLevel: 50
     chance: 2
-    increaseChancePerLevel: 0.1
+    chanceIncreasePerLevel: 0.1
 
 POSEIDONS_AXE:
   Explosive_Foraging:
@@ -18,16 +19,19 @@ POSEIDONS_AXE:
   Spirit_of_the_Woods:
     maxLevel: 50
     chance: 2
-    increaseChancePerLevel: 0.1
+    chanceIncreasePerLevel: 0.1
 
 ATLANTIS_PICKAXE:
   BlackHole:
     maxLevel: 50
     chance: 2
+    chanceIncreasePerLevel: 0.1
     radius: 5
-    pullPlayers: true
-    pullPlayersRadius: 5
-    damagePlayersOnExplosion: false
+    pullEntities: true
+    pullEntitiesRadius: 5
+    blockPullPower: 0.5
+    entitiesPullPower: 0.05
+    damageEntitiesOnExplosion: false
     damagePower: 5 #Hearts
 
   Spicy_Taco:

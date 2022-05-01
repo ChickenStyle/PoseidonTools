@@ -2,6 +2,7 @@ package me.chickenstyle.poseidontools.events;
 
 import me.chickenstyle.poseidontools.PoseidonTools;
 import me.chickenstyle.poseidontools.ToolType;
+import me.chickenstyle.poseidontools.abilities.BlackHoleAbility;
 import me.chickenstyle.poseidontools.gui.ItemStackBuilder;
 import me.chickenstyle.poseidontools.gui.menus.UpgradeToolMenu;
 import me.chickenstyle.poseidontools.utils.Message;
@@ -36,61 +37,10 @@ public class ToolXPEvents implements Listener {
         if (!ToolBuilder.isPoseidonTool(player.getItemInHand())) return;
         if (e.getAction() != Action.RIGHT_CLICK_AIR && e.getAction() != Action.RIGHT_CLICK_BLOCK) return;
 
+
         PoseidonTools.getInstance().getMenuHandler().openMenu(player, new UpgradeToolMenu(
                 ToolBuilder.fromItemStack(player.getItemInHand())
         ));
-
-    }
-
-    public void breakTreeTwo(Player player, Block tree, int maxBrokenBlocks) {
-
-        List<Block> bList = new ArrayList<Block>(){{add(tree);}};
-        final int[] brokenBlocks = {0};
-
-        new BukkitRunnable() {
-
-            @Override
-            public void run() {
-                if (!bList.isEmpty() && brokenBlocks[0] < maxBrokenBlocks) {
-                    for (int i = 0; i < bList.size(); i++) {
-                        Block block = bList.get(i);
-                        if (block.getType() == Material.LOG) {
-
-                            if (PoseidonTools.getInstance().hasWorldGuard()) {
-                                if (PoseidonTools.getInstance().getWorldGuard().canBuild(player,block)) {
-                                    for (ItemStack item : block.getDrops()) {
-                                        block.getWorld().dropItemNaturally(block.getLocation(), item);
-                                    }
-                                    block.setType(Material.AIR);
-                                    brokenBlocks[0]++;
-                                }
-                            } else {
-                                for (ItemStack item : block.getDrops()) {
-                                    block.getWorld().dropItemNaturally(block.getLocation(), item);
-                                }
-                                block.setType(Material.AIR);
-                                brokenBlocks[0]++;
-                            }
-                        }
-                        for (BlockFace face : BlockFace.values()) {
-                            Block relBlock = block.getRelative(face);
-                            if (relBlock.getType() == Material.LOG) {
-                                if (PoseidonTools.getInstance().hasWorldGuard() &&
-                                        !PoseidonTools.getInstance().getWorldGuard().canBuild(player, relBlock))
-                                    continue;
-
-                                bList.add(block.getRelative(face));
-                            }
-                        }
-                        bList.remove(block);
-                    }
-                } else{
-                    this.cancel();
-                }
-
-            }
-        }.runTaskTimer(PoseidonTools.getInstance(), 0, 5);
-
     }
 
 

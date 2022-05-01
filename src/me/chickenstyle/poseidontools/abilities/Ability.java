@@ -5,8 +5,8 @@ import org.bukkit.entity.Player;
 
 public abstract class Ability {
 
-    private Location loc;
-    private Player player;
+    private final Location loc;
+    private final Player player;
 
     public Ability(Location loc, Player player) {
         this.loc = loc;
@@ -17,16 +17,8 @@ public abstract class Ability {
         return loc;
     }
 
-    public void setLocation(Location loc) {
-        this.loc = loc;
-    }
-
     public Player getPlayer() {
         return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 
     public abstract void run();

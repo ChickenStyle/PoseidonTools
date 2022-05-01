@@ -1,5 +1,6 @@
 package me.chickenstyle.poseidontools.nms;
 
+import net.minecraft.server.v1_8_R1.Item;
 import net.minecraft.server.v1_8_R1.NBTTagCompound;
 import net.minecraft.server.v1_8_R1.NBTTagList;
 import org.bukkit.Material;
@@ -70,5 +71,10 @@ public class Handler_1_8_R1 implements NMSHandler {
 		tag.set("ench", ench);
 		nmsStack.setTag(tag);
 		return CraftItemStack.asCraftMirror(nmsStack);
+	}
+
+	@Override
+	public boolean isItem(Material material) {
+		return Item.getById(material.getId()) != null;
 	}
 }
