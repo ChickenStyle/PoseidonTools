@@ -1,5 +1,6 @@
 package me.chickenstyle.poseidontools.utils;
 
+import javafx.geometry.Pos;
 import me.chickenstyle.poseidontools.PoseidonTools;
 import me.chickenstyle.poseidontools.ToolType;
 import me.chickenstyle.poseidontools.nms.NMSHandler;
@@ -17,6 +18,11 @@ public class ToolBuilder {
 
     public static PoseidonTool generateDefaultTool(ToolType toolType) {
         return new PoseidonTool(toolType);
+    }
+
+    public static PoseidonTool generateMaxTool(ToolType toolType) {
+        int maxLevel = PoseidonTools.getInstance().getConfig().getInt("toolsData." + toolType + ".maxLevel");
+        return new PoseidonTool(toolType, maxLevel, 0);
     }
 
     public static PoseidonTool fromItemStack(ItemStack item) {

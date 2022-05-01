@@ -134,7 +134,7 @@ public class AbilityEvents implements Listener {
         double spiritChance = config.getDouble("POSEIDONS_AXE.Spirit_of_the_Woods.chance");
         spiritChance += config.getDouble("POSEIDONS_AXE.Spirit_of_the_Woods.chanceIncreasePerLevel") *
                 tool.getAbilityLevel("Spirit_of_the_Woods");
-        System.out.println(spiritChance);
+
         if (tool.hasAbility("Spirit_of_the_Woods") && rnd.nextDouble() < spiritChance / 100) {
             new SpiritOfTheWoodsAbility(e.getBlock().getLocation(), player).run();
             player.sendMessage(Message.ACTIVATED_ABILITY.toMSG(

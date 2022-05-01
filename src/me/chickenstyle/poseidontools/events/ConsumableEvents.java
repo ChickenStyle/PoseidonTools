@@ -25,7 +25,6 @@ public class ConsumableEvents implements Listener {
         String type = PoseidonTools.getInstance().getNMS().getStringData(item, "Consumable");
 
         if (type.equals("RageBerry")) {
-            System.out.println("Worked");
             PoseidonTools.getInstance().getDamageManager().setDamageBoost(
                     player.getUniqueId(), 0.2, 15
             );

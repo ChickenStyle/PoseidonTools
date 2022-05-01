@@ -68,7 +68,6 @@ public class DamageManager implements Listener{
         Player player = (Player) e.getDamager();
         if (hasDamageBoost(player.getUniqueId())) e.setDamage(e.getFinalDamage() +
                 getDamageBoost(player.getUniqueId()) * e.getFinalDamage());
-        System.out.println(e.getFinalDamage());
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
