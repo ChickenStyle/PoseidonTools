@@ -48,6 +48,8 @@ public class PoseidonTools extends JavaPlugin {
         enchantConfig = new Config("enchantments.yml");
         abilitiesConfig = new Config("abilities.yml");
 
+        getCommand("poseidontools").setExecutor(new PoseidonToolsCommand());
+
         Message.loadMessages();
         Logger.log("&aPlugin has been loaded!");
     }

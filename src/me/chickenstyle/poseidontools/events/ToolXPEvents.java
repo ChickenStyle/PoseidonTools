@@ -43,22 +43,6 @@ public class ToolXPEvents implements Listener {
         ));
     }
 
-
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        e.getPlayer().getInventory().addItem(
-                ToolBuilder.toItemStack(ToolBuilder.generateDefaultTool(ToolType.MOBSWORD)));
-        e.getPlayer().getInventory().addItem(
-                ToolBuilder.toItemStack(ToolBuilder.generateDefaultTool(ToolType.ATLANTIS_PICKAXE)));
-        e.getPlayer().getInventory().addItem(
-                ToolBuilder.toItemStack(ToolBuilder.generateDefaultTool(ToolType.POSEIDONS_AXE)));
-
-        ItemStack token = ItemStackBuilder.buildToken();
-        token.setAmount(10000);
-        e.getPlayer().getInventory().addItem(token);
-
-    }
-
     @EventHandler
     public void onPlayerKillEvent(EntityDeathEvent e) {
         Entity entity = e.getEntity();
